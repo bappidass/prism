@@ -415,7 +415,7 @@ const About = () => {
                   j < arr.length - 1 ? (
                     <span key={j}>
                       {part}
-                      <strong className="font-bold text-2xl italic">
+                      <strong className="font-bold text-lg  md:text-2xl italic">
                         {v.bold}
                       </strong>
                     </span>
@@ -527,6 +527,7 @@ const About = () => {
           </Swiper>
         </div>
       </section>
+
       {/* Collaborations and Clients */}
       <section className="py-6 sm:py-12 px-4">
         <div className="max-w-5xl mx-auto text-center">
