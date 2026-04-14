@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 97%;
+    --foreground: 0 0% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+
+    --primary: 220 62% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 93%;
+    --secondary-foreground: 0 0% 7%;
+
+    --muted: 220 14% 95%;
+    --muted-foreground: 220 8% 46%;
+
+    --accent: 220 62% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 220 62% 38%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 220 62% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 40% 95%;
+    --sidebar-accent-foreground: 220 62% 38%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 220 62% 38%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+.ql-editor {
+  min-height: 200px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ql-toolbar {
+  border-radius: 0.5rem 0.5rem 0 0 !important;
+  border-color: hsl(220 13% 88%) !important;
+}
+
+.ql-container {
+  border-radius: 0 0 0.5rem 0.5rem !important;
+  border-color: hsl(220 13% 88%) !important;
+}
