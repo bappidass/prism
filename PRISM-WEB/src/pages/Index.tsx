@@ -23,7 +23,11 @@ import Countries from "@/assets/Countries.webp";
 import Atrisk from "@/assets/Atrisk.webp";
 import community2 from "@/assets/community2.png";
 import community3 from "@/assets/community3.png";
-import community4 from "@/assets/community4.png";
+import SDG6 from "@/assets/SDG6.webp";
+import SDG10 from "@/assets/SDG10.webp";
+import SDG14 from "@/assets/SDG14.webp";
+import SDG15 from "@/assets/SDG15.webp";
+import SDG16 from "@/assets/SDG16.webp";
 import community5 from "@/assets/community5.png";
 import community6 from "@/assets/community6.png";
 import community7 from "@/assets/community7.png";
@@ -309,12 +313,12 @@ const Index = () => {
             modules={[Autoplay]}
             spaceBetween={16}
             autoplay={{
-              delay: 2000,
+              delay: 1000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
             loop
-            speed={600}
+            speed={1200}
             grabCursor={true}
             breakpoints={{
               0: { slidesPerView: 3 },
@@ -329,7 +333,11 @@ const Index = () => {
               community1,
               community2,
               community3,
-              community4,
+             SDG6,
+             SDG10,
+             SDG14,
+             SDG15,
+             SDG16,
               community5,
               community6,
               community7,

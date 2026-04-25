@@ -20,7 +20,11 @@ import { Autoplay } from "swiper/modules";
 import community1 from "@/assets/community1.png";
 import community2 from "@/assets/community2.png";
 import community3 from "@/assets/community3.png";
-import community4 from "@/assets/community4.png";
+import SDG6 from "@/assets/SDG6.webp";
+import SDG10 from "@/assets/SDG10.webp";
+import SDG14 from "@/assets/SDG14.webp";
+import SDG15 from "@/assets/SDG15.webp";
+import SDG16 from "@/assets/SDG16.webp";
 import community5 from "@/assets/community5.png";
 import community6 from "@/assets/community6.png";
 import community7 from "@/assets/community7.png";
@@ -319,47 +323,50 @@ const About = () => {
           </span>
         </div>
 
-        <Swiper
-          modules={[Autoplay]}
-          spaceBetween={20}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          loop
-          speed={600}
-          grabCursor={true}
-          breakpoints={{
-            0: { slidesPerView: 3 },
-            480: { slidesPerView: 4 },
-            640: { slidesPerView: 5 },
-            768: { slidesPerView: 6 },
-            1024: { slidesPerView: 8 },
-          }}
-          className="max-w-5xl mx-auto mb-7"
-        >
-          {[
-            community1,
-            community2,
-            community3,
-            community4,
-            community5,
-            community6,
-            community7,
-            community8,
-          ].map((item, i) => (
-            <SwiperSlide key={i}>
-              <div className="flex justify-center items-center">
-                <img
-                  src={item}
-                  alt={`community-${i}`}
-                  className="w-24 h-24 md:w-28 md:h-28 lg:w-48 lg:h-48 object-contain hover:scale-110 transition duration-300"
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={16}
+            autoplay={{
+              delay: 1000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            loop
+            speed={1200}
+            grabCursor={true}
+            breakpoints={{
+              0: { slidesPerView: 3 },
+              480: { slidesPerView: 4 },
+              640: { slidesPerView: 5 },
+              768: { slidesPerView: 6 },
+              1024: { slidesPerView: 8 },
+            }}
+            className="max-w-6xl mx-auto"
+          >
+            {[
+              community1,
+              community2,
+              community3,
+             SDG6,
+             SDG10,
+             SDG14,
+             SDG15,
+             SDG16,
+              community5,
+              community6,
+              community7,
+              community8,
+              community6,
+              community7,
+              community8,
+            ].map((g, i) => (
+              <SwiperSlide key={i}>
+                <div className="flex flex-col items-center gap-1 py-2">
+                  <img src={g} alt="Community" className="h-38 " />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
         <p className="text-sm sm:text-base md:text-lg text-gray-800 font-poppins max-w-2xl text-center mx-auto">
           in an equitable, inclusive, and climate resilient way.
