@@ -5,16 +5,20 @@ import wd1 from "@/assets/what-we-do-1.jpg";
 import wd2 from "@/assets/what-we-do-2.jpg";
 import wd3 from "@/assets/what-we-do-3.jpg";
 import approachImg from "@/assets/approach.jpg";
-import problemImg from "@/assets/problem.jpg"; // add a suitable image to assets
-import howWeWork1 from "@/assets/how-we-work-1.jpg"; // wind turbine / sunflower field
-import howWeWork2 from "@/assets/how-we-work-2.jpg"; // people running at sunset
+import problemImg from "@/assets/problem.jpg";
+import howWeWork1 from "@/assets/how-we-work-1.jpg";
+import howWeWork2 from "@/assets/how-we-work-2.jpg";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import PageHero from "@/components/PageHero";
 import useNewsStore from "@/stores/useNewsStore";
 import DOMPurify from "dompurify";
+import impact from "@/assets/impact.png";
 import community1 from "@/assets/community1.png";
+import servicepoints from "@/assets/servicepoints.png";
+import chain from "@/assets/chain.png";
+import criticalresouces from "@/assets/criticalresource.png";
 import community2 from "@/assets/community2.png";
 import community3 from "@/assets/community3.png";
 import community4 from "@/assets/community4.png";
@@ -25,6 +29,7 @@ import community8 from "@/assets/community8.png";
 import useTeamStore from "@/stores/useTeamStore";
 import RiskManagementMindmap from "@/components/RiskManagementMindmap";
 import RiskConnectedMindmap from "@/components/RiskConnected";
+
 const whatWeDo = [
   { img: wd1, title: "Design better policies and regulations" },
   { img: wd2, title: "Build capacity and implement systems" },
@@ -66,99 +71,33 @@ const howWeWorkItems = [
 const stats = [
   {
     icon: (
-      // Award / hand icon
-      <svg
-        viewBox="0 0 56 56"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-14 h-14 mx-auto mb-4"
-      >
-        <circle cx="28" cy="18" r="10" stroke="black" strokeWidth="2.2" />
-        <path
-          d="M21 26l-4 14M35 26l4 14M24 40l4-6 4 6"
-          stroke="black"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M20 44h16"
-          stroke="black"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M22 13l2 4 4.5.7-3.2 3.1.75 4.45L28 23l-4.05 2.25"
-          stroke="black"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <img
+        src={servicepoints}
+        alt="1000+ service points"
+        className="w-40 h-40 mx-auto mb-4 object-contain"
+      />
     ),
     bold: "1000+ service points",
     sub: "connected and supported",
   },
   {
     icon: (
-      // Pentagon network icon
-      <svg
-        viewBox="0 0 56 56"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-14 h-14 mx-auto mb-4"
-      >
-        <polygon
-          points="28,8 48,22 41,44 15,44 8,22"
-          stroke="black"
-          strokeWidth="2.2"
-          fill="none"
-          strokeLinejoin="round"
-        />
-        <circle cx="28" cy="8" r="3" fill="black" />
-        <circle cx="48" cy="22" r="3" fill="black" />
-        <circle cx="41" cy="44" r="3" fill="black" />
-        <circle cx="15" cy="44" r="3" fill="black" />
-        <circle cx="8" cy="22" r="3" fill="black" />
-      </svg>
+      <img
+        src={chain}
+        alt="Strong networks"
+        className="w-40 h-40 mx-auto mb-4 object-contain"
+      />
     ),
     bold: "Strong networks",
     sub: "of trained local experts",
   },
   {
     icon: (
-      // People/resource network icon
-      <svg
-        viewBox="0 0 56 56"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-14 h-14 mx-auto mb-4"
-      >
-        <rect
-          x="18"
-          y="10"
-          width="12"
-          height="10"
-          rx="2"
-          stroke="black"
-          strokeWidth="2.2"
-        />
-        <circle cx="10" cy="34" r="6" stroke="black" strokeWidth="2" />
-        <circle cx="46" cy="22" r="6" stroke="black" strokeWidth="2" />
-        <circle cx="46" cy="44" r="6" stroke="black" strokeWidth="2" />
-        <path
-          d="M30 15h10M24 20v6M16 34h-6M40 22h-2M40 44h-2"
-          stroke="black"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M8 28v-4M14 30l10-10"
-          stroke="black"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
-      </svg>
+      <img
+        src={criticalresouces}
+        alt="Critical resources"
+        className="w-40 h-40 mx-auto mb-4 object-contain"
+      />
     ),
     bold: "Critical resources",
     sub: "protected and optimized every year",
@@ -172,6 +111,7 @@ const sectionLabelClass =
 const Index = () => {
   const { news, fetchNews } = useNewsStore();
   const { fetchTeam, clients, partnerships } = useTeamStore();
+
   useEffect(() => {
     fetchNews();
     fetchTeam();
@@ -213,7 +153,8 @@ const Index = () => {
           </div>
         </div>
       </section>
-     {/* ── Repeatable Approach ── */}
+
+      {/* ── Repeatable Approach ── */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-center mb-10 sm:mb-14">
@@ -225,14 +166,34 @@ const Index = () => {
             We scale data-driven solutions across regions by combining
             technology, local expertise, and system-level thinking.
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start max-w-4xl mx-auto">
-            <div className="overflow-hidden rounded-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+            {/* Image with play button */}
+            <div className="relative overflow-hidden h-[350px]">
               <img
                 src={approachImg}
                 alt="Sustainable approach"
-                className="w-full h-52 sm:h-60 md:h-64 object-cover"
+                className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-black/20" />
+              <a
+                href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                <div className="w-16 h-16 rounded-full bg-white/30 backdrop-blur-sm border-2 border-white flex items-center justify-center hover:bg-white/50 transition-all duration-300">
+                  <svg
+                    className="w-7 h-7 text-white ml-1"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </a>
             </div>
+
+            {/* Text */}
             <div className="flex flex-col justify-start space-y-4 text-sm sm:text-base text-black leading-relaxed text-left font-poppins">
               <p>
                 We scale data-driven solutions across regions by combining
@@ -248,7 +209,7 @@ const Index = () => {
       </section>
 
       {/* ── The Problem ── */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 ">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div
             className="rounded-2xl overflow-hidden grid p-3 md:p-8 grid-cols-1 md:grid-cols-2 min-h-[380px]"
@@ -288,48 +249,38 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       <RiskConnectedMindmap />
 
       <section className="pt-7 bg-white">
         <div className="max-w-7xl mx-auto">
-          {/* Section label */}
           <div className="flex justify-center mb-3 sm:mb-4">
-            <span className={sectionLabelClass}>OUR IMPACT</span>
+            <span className={sectionLabelClass}>OUR SOLUTIONS</span>
           </div>
-
-          {/* Headline row */}
-          <div className="flex flex-col sm:flex-row items-center justify-center  sm:mb-2">
-            {/* Headline */}
+          <div className="flex flex-col sm:flex-row items-center justify-center sm:mb-2">
             <h2 className="text-lg max-w-4xl sm:text-2xl lg:text-3xl font-poppins font-normal text-black leading-snug text-center sm:text-left">
-             We support systems end-to-end, so they work when it matters most.
-             
+              We support systems end-to-end, so they work when it matters most.
             </h2>
           </div>
         </div>
       </section>
+
       <RiskManagementMindmap />
- ]
+
       {/* ── Our Impact ── */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          {/* Section label */}
-          <div className="flex justify-center mb-10 sm:mb-14">
+          <div className="flex justify-center mb-3 sm:mb-6">
             <span className={sectionLabelClass}>OUR IMPACT</span>
           </div>
 
-          {/* Headline row */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 mb-12 sm:mb-16">
-            {/* Headline */}
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-poppins font-normal text-black leading-snug text-center sm:text-left">
-              Delivering{" "}
-              <span className="font-bold text-[#24519E]">
-                measurable outcomes
-              </span>{" "}
-              at scale
-            </h2>
+          {/* Add the impact image here */}
+          <div className="flex justify-center mb-3 sm:mb-6">
+            <img src={impact} alt="Our Impact" className="max-w-full h-auto" />
           </div>
 
-          {/* SDG Goals — scrollable swiper */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 mb-12 sm:mb-16"></div>
+
           <Swiper
             modules={[Autoplay]}
             spaceBetween={16}
@@ -371,18 +322,19 @@ const Index = () => {
       </section>
 
       {/* ── Stats ── */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white border-y border-border">
+      <section className="py-10 sm:py-16 px-4 sm:px-6 lg:px-8 border-border">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-6 text-center">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-3 text-center"
+            style={{ gap: "120px" }}
+          >
             {stats.map((s, i) => (
               <div key={i} className="flex flex-col items-center">
                 {s.icon}
                 <p className="text-lg sm:text-xl font-bold font-poppins text-black leading-snug">
                   {s.bold}
                 </p>
-                <p className="text-sm text-muted-foreground font-poppins mt-1">
-                  {s.sub}
-                </p>
+                <p className="text-sm text-black font-poppins mt-1">{s.sub}</p>
               </div>
             ))}
           </div>
@@ -396,69 +348,52 @@ const Index = () => {
             <span className={sectionLabelClass}>HOW WE WORK</span>
           </div>
 
-          <div className="flex flex-col gap-6 sm:gap-8">
+          <div className="flex flex-col gap-4 sm:gap-6">
             {howWeWorkItems.map((item, i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-1 md:grid-cols-2 gap-0 rounded-2xl overflow-hidden ${
-                  item.imgLeft ? "" : ""
-                }`}
-              >
-                {/* Text card */}
-                {!item.imgLeft && (
-                  <div
-                    className="p-8 sm:p-10 lg:p-12 flex flex-col justify-center"
-                    style={{ backgroundColor: "#D6E4F7" }}
-                  >
-                    <h3 className="text-2xl sm:text-3xl font-bold font-poppins text-[#1a3a6e] mb-5">
-                      {item.title}
-                    </h3>
-                    {item.body.map((para, j) => (
-                      <p
-                        key={j}
-                        className="text-sm sm:text-base font-poppins text-[#1a3a6e] leading-relaxed mb-3 last:mb-0"
-                      >
-                        {para}
-                      </p>
-                    ))}
-                  </div>
-                )}
+              <div key={i} className="flex flex-col md:flex-row gap-4 sm:gap-6">
+                {/* TEXT CARD */}
+                <div
+                  className={`w-full md:w-1/2 h-auto md:h-[396px] p-6 md:p-8 lg:p-12 flex flex-col justify-center ${
+                    item.imgLeft ? "order-2 md:order-2" : "order-1 md:order-1"
+                  }`}
+                  style={{
+                    backgroundColor: "rgba(177, 206, 255, 1)",
+                    borderRadius: "60px 0px 60px 0px",
+                  }}
+                >
+                  <h3 className="text-2xl sm:text-3xl font-bold font-poppins text-[#1a3a6e] mb-5">
+                    {item.title}
+                  </h3>
+                  {item.body.map((para, j) => (
+                    <p
+                      key={j}
+                      className="text-sm sm:text-base font-poppins text-[#1a3a6e] leading-relaxed mb-3 last:mb-0"
+                    >
+                      {para}
+                    </p>
+                  ))}
+                </div>
 
-                {/* Image */}
-                <div className="relative min-h-[240px] md:min-h-0">
+                {/* IMAGE CARD */}
+                <div
+                  className={`w-full md:w-1/2 h-[220px] md:h-[396px] overflow-hidden ${
+                    item.imgLeft ? "order-1 md:order-1" : "order-2 md:order-2"
+                  }`}
+                  style={{ borderRadius: "0px" }}
+                >
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-
-                {/* Text card (right side) */}
-                {item.imgLeft && (
-                  <div
-                    className="p-8 sm:p-10 lg:p-12 flex flex-col justify-center"
-                    style={{ backgroundColor: "#D6E4F7" }}
-                  >
-                    <h3 className="text-2xl sm:text-3xl font-bold font-poppins text-[#1a3a6e] mb-5">
-                      {item.title}
-                    </h3>
-                    {item.body.map((para, j) => (
-                      <p
-                        key={j}
-                        className="text-sm sm:text-base font-poppins text-[#1a3a6e] leading-relaxed mb-3 last:mb-0"
-                      >
-                        {para}
-                      </p>
-                    ))}
-                  </div>
-                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Partnerships */}
+      {/* ── Partnerships ── */}
       <section className="py-6 sm:py-12 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center mb-8 sm:mb-10">
@@ -468,10 +403,7 @@ const Index = () => {
           <Swiper
             modules={[Autoplay]}
             spaceBetween={30}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-            }}
+            autoplay={{ delay: 0, disableOnInteraction: false }}
             speed={2500}
             loop
             grabCursor
@@ -494,7 +426,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Collaborations and Clients */}
+      {/* ── Collaborations and Clients ── */}
       <section className="py-6 sm:py-12 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center mb-8 sm:mb-10">
@@ -506,10 +438,7 @@ const Index = () => {
           <Swiper
             modules={[Autoplay]}
             spaceBetween={12}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-            }}
+            autoplay={{ delay: 0, disableOnInteraction: false }}
             speed={3000}
             loop
             grabCursor
@@ -532,18 +461,17 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── News and Publications ── */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          {/* Section label */}
           <div className="flex justify-center mb-10 sm:mb-14">
             <span
-              className={`${sectionLabelClass}  decoration-[#24519E] underline-offset-8`}
+              className={`${sectionLabelClass} decoration-[#24519E] underline-offset-8`}
             >
               NEWS AND PUBLICATIONS
             </span>
           </div>
 
-          {/* Swiper */}
           <Swiper
             modules={[Autoplay]}
             spaceBetween={20}
@@ -567,7 +495,6 @@ const Index = () => {
             {news?.map((item, i) => (
               <SwiperSlide key={i}>
                 <div className="border border-border rounded-lg overflow-hidden text-left bg-card h-full flex flex-col">
-                  {/* Thumbnail */}
                   <img
                     src={item.img}
                     alt={item.title}
@@ -576,27 +503,19 @@ const Index = () => {
                     width={640}
                     height={512}
                   />
-
-                  {/* Card body */}
                   <div className="p-4 sm:p-5 flex flex-col flex-1">
-                    {/* Date */}
                     <p className="text-[11px] sm:text-xs font-medium tracking-wide text-muted-foreground mb-1 font-poppins">
                       {item.date}
                     </p>
-
-                    {/* Title */}
                     <h3 className="text-sm sm:text-[15px] font-semibold text-primary mb-2 font-poppins leading-snug">
                       {item.title}
                     </h3>
-
-                    {/* Excerpt */}
                     <p
                       className="text-xs text-muted-foreground mb-4 line-clamp-4 flex-1"
                       dangerouslySetInnerHTML={{
                         __html: DOMPurify.sanitize(item.body?.[0] || ""),
                       }}
                     />
-
                     <Link
                       to={`/news/${item.id}`}
                       className="text-sm font-semibold text-primary hover:underline mt-auto"

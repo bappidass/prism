@@ -19,11 +19,11 @@ const Navbar = () => {
       {/* Top bar */}
       <div className="max-w-5xl mx-auto w-full flex items-center justify-between h-20 px-4">
         {/* Logo */}
-        <Link to="/" className=" flex md:hidden items-center gap-2">
+        <Link to="/" className=" flex lg:hidden items-center gap-2">
           <img src={logo} alt="PRISM Institute" className="h-12 md:h-14 " />
         </Link>
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-10">
           <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="PRISM Institute" className="h-12 md:h-14 " />
           </Link>
@@ -43,7 +43,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2"
+          className="lg:hidden p-2"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -53,7 +53,7 @@ const Navbar = () => {
 
       {/* Mobile nav — inside the same header so it's part of sticky flow */}
       {open && (
-        <nav className="md:hidden border-t border-border bg-background px-4 pb-4">
+        <nav className="lg:hidden border-t border-border bg-background px-4 pb-4">
           {navItems.map((item) => (
             <Link
               key={item.path}
