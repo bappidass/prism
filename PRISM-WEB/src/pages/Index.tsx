@@ -333,18 +333,21 @@ const Index = () => {
               community1,
               community2,
               community3,
-             SDG6,
-             SDG10,
+            
+              community5,
+              SDG6,
+              community6,
+              SDG10,
+              community7,
+              
+             
+              community8,
+              
+               
+             
              SDG14,
              SDG15,
              SDG16,
-              community5,
-              community6,
-              community7,
-              community8,
-              community6,
-              community7,
-              community8,
             ].map((g, i) => (
               <SwiperSlide key={i}>
                 <div className="flex flex-col items-center gap-1 py-2">
