@@ -66,7 +66,7 @@ export default function RiskConnectedMindmap() {
                     initial={"initial"}
                     animate={isInView ? "animate" : "initial"}
                     transition={transitionConfig.topLeft.transition}
-                    width="156"
+                    width="150"
                     height="208"
                     viewBox="0 0 156 228"
                     fill="none"
@@ -97,7 +97,7 @@ export default function RiskConnectedMindmap() {
                     alignSelf: "center", justifySelf: "center",
                     gridColumnStart: "2",
                     gridRowStart: "1",
-                    transform: "translate(-50%,25%)",
+                    transform: "translate(-50%,20%)",
                 }}
                 className="flex justify-center items-center p-4">
                 <MindMapImage isInView={isInView}

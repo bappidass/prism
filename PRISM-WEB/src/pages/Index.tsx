@@ -4,10 +4,10 @@ import heroImg from "@/assets/hero-home.jpg";
 import wd1 from "@/assets/what-we-do-1.jpg";
 import wd2 from "@/assets/what-we-do-2.jpg";
 import wd3 from "@/assets/what-we-do-3.jpg";
-import approachImg from "@/assets/approach.jpg";
+import approachImg from "@/assets/Regulatory.webp";
 import problemImg from "@/assets/problem.jpg";
-import howWeWork1 from "@/assets/how-we-work-1.jpg";
-import howWeWork2 from "@/assets/how-we-work-2.jpg";
+import howWeWork1 from "@/assets/how-we-work-1.webp";
+import howWeWork2 from "@/assets/how-we-work-2.webp";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -16,9 +16,11 @@ import useNewsStore from "@/stores/useNewsStore";
 import DOMPurify from "dompurify";
 import impact from "@/assets/impact.png";
 import community1 from "@/assets/community1.png";
-import servicepoints from "@/assets/servicepoints.png";
-import chain from "@/assets/chain.png";
-import criticalresouces from "@/assets/criticalresource.png";
+
+import Regulatory from "@/assets/Regulatory.webp";
+import Developing from "@/assets/Developing.webp";
+import Countries from "@/assets/Countries.webp";
+import Atrisk from "@/assets/Atrisk.webp";
 import community2 from "@/assets/community2.png";
 import community3 from "@/assets/community3.png";
 import community4 from "@/assets/community4.png";
@@ -36,32 +38,19 @@ const whatWeDo = [
   { img: wd3, title: "Enable data-driven communities" },
 ];
 
-const sdgGoals = [
-  { num: "2", color: "#DDA63A", label: "ZERO\nHUNGER" },
-  { num: "3", color: "#4C9F38", label: "GOOD HEALTH\nAND WELL-BEING" },
-  { num: "4", color: "#C5192D", label: "QUALITY\nEDUCATION" },
-  { num: "5", color: "#FF3A21", label: "GENDER\nEQUALITY" },
-  { num: "8", color: "#A21942", label: "DECENT WORK AND\nECONOMIC GROWTH" },
-  { num: "11", color: "#FD9D24", label: "SUSTAINABLE CITIES\nAND COMMUNITIES" },
-  { num: "13", color: "#3F7E44", label: "CLIMATE\nACTION" },
-  { num: "17", color: "#19486A", label: "PARTNERSHIPS\nFOR THE GOALS" },
-];
-
 const howWeWorkItems = [
   {
-    title: "Smart systems + data",
+    title: "Risks are interconnected, hyperlocal, and disparate",
     body: [
-      "We design integrated solutions that combine technology with real-world workflows—making systems more efficient, responsive, and scalable.",
-      "We design integrated solutions that combine technology with real-world workflows—making systems more efficient, responsive, and scalable.",
+      "The macro-micro challenge Risks to achieving social and economic outcomes are interconnected but not accounted for (considered as externalities due to the vertical nature of institutions) Intervention strategies largely linear, siloed and top-down Lack of data at community levels Decision support tools not always designed to capture local wisdom and beliefs on risks",
     ],
     img: howWeWork1,
     imgLeft: false,
   },
   {
-    title: "Smart systems + data",
+    title: "The COMEAI collective: a community risk management model ",
     body: [
-      "We design integrated solutions that combine technology with real-world workflows—making systems more efficient, responsive, and scalable.",
-      "We design integrated solutions that combine technology with real-world workflows—making systems more efficient, responsive, and scalable.",
+      "A localized collaborative model empowers communities, especially women-led collectives, to become socially and financially self-sustaining. By transforming existing groups into multi-purpose community hubs, leveraging digital tools for risk identification, co-designing interventions, and demonstrating value through measurable outcomes, the model promotes participation, resilience and long-term impact.",
     ],
     img: howWeWork2,
     imgLeft: true,
@@ -72,35 +61,70 @@ const stats = [
   {
     icon: (
       <img
-        src={servicepoints}
-        alt="1000+ service points"
-        className="w-40 h-40 mx-auto mb-4 object-contain"
+        src={Regulatory}
+        alt="10000+ Regulatory Professionals"
+        className="
+          w-32 h-32
+          md:w-40 md:h-40
+          lg:w-52 lg:h-52
+          xl:w-60 xl:h-60
+          mx-auto mb-4 object-contain
+        "
       />
     ),
-    bold: "1000+ service points",
-    sub: "connected and supported",
+    bold: "10000+ Regulatory Professionals",
+    sub: "Over 1000 regulatory professionals trained in risk management and modern regulatory approaches across 4 continents",
   },
   {
     icon: (
       <img
-        src={chain}
-        alt="Strong networks"
-        className="w-40 h-40 mx-auto mb-4 object-contain"
+        src={Countries}
+        alt="10 Countries in 4 Continents"
+    className="
+          w-32 h-32
+          md:w-40 md:h-40
+          lg:w-52 lg:h-52
+          xl:w-60 xl:h-60
+          mx-auto mb-4 object-contain
+        "
       />
     ),
-    bold: "Strong networks",
-    sub: "of trained local experts",
+    bold: "10 Countries in 4 Continents",
+    sub: "Regulatory systems across multiple sectors modernized to focus on outcomes in over 10 countries in 4 continents",
   },
   {
     icon: (
       <img
-        src={criticalresouces}
-        alt="Critical resources"
-        className="w-40 h-40 mx-auto mb-4 object-contain"
+        src={Developing}
+        alt="10 Developing Economies "
+     className="
+          w-32 h-32
+          md:w-40 md:h-40
+          lg:w-52 lg:h-52
+          xl:w-60 xl:h-60
+          mx-auto mb-4 object-contain
+        "
       />
     ),
-    bold: "Critical resources",
-    sub: "protected and optimized every year",
+    bold: "10 Developing Economies ",
+    sub: " ⁠⁠Grassroots collaborative networks established across communities in over 10 developing economies in path to risk resilience",
+  },
+  {
+    icon: (
+      <img
+        src={Atrisk}
+        alt="20,000 People in at-risk Communities"
+      className="
+          w-32 h-32
+          md:w-40 md:h-40
+          lg:w-52 lg:h-52
+          xl:w-60 xl:h-60
+          mx-auto mb-4 object-contain
+        "
+      />
+    ),
+    bold: "20,000 People in at-risk Communities",
+    sub: "Over 20,000 people in at-risk communities with increased possibilities on not being left behind",
   },
 ];
 
@@ -310,10 +334,13 @@ const Index = () => {
               community6,
               community7,
               community8,
+              community6,
+              community7,
+              community8,
             ].map((g, i) => (
               <SwiperSlide key={i}>
                 <div className="flex flex-col items-center gap-1 py-2">
-                  <img src={g} alt="" />
+                  <img src={g} alt="Community" className="h-38 " />
                 </div>
               </SwiperSlide>
             ))}
@@ -324,10 +351,7 @@ const Index = () => {
       {/* ── Stats ── */}
       <section className="py-10 sm:py-16 px-4 sm:px-6 lg:px-8 border-border">
         <div className="max-w-5xl mx-auto">
-          <div
-            className="grid grid-cols-1 sm:grid-cols-3 text-center"
-            style={{ gap: "120px" }}
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-4 text-center gap-5 sm:gap-8 md:gap-12">
             {stats.map((s, i) => (
               <div key={i} className="flex flex-col items-center">
                 {s.icon}
@@ -361,13 +385,13 @@ const Index = () => {
                     borderRadius: "60px 0px 60px 0px",
                   }}
                 >
-                  <h3 className="text-2xl sm:text-3xl font-bold font-poppins text-[#1a3a6e] mb-5">
+                  <h3 className="text-md sm:text-2xl md:text-3xl font-bold font-poppins text-[#1a3a6e] mb-5">
                     {item.title}
                   </h3>
                   {item.body.map((para, j) => (
                     <p
                       key={j}
-                      className="text-sm sm:text-base font-poppins text-[#1a3a6e] leading-relaxed mb-3 last:mb-0"
+                      className="text-sm text-justify sm:text-base font-poppins text-[#1a3a6e] leading-relaxed mb-3 last:mb-0"
                     >
                       {para}
                     </p>
@@ -393,7 +417,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── Partnerships ── */}
+      {/* Partnerships */}
       <section className="py-6 sm:py-12 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center mb-8 sm:mb-10">
@@ -403,22 +427,39 @@ const Index = () => {
           <Swiper
             modules={[Autoplay]}
             spaceBetween={30}
-            autoplay={{ delay: 0, disableOnInteraction: false }}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
             speed={2500}
-            loop
-            grabCursor
+            loop={true}
+            grabCursor={true}
             breakpoints={{
-              0: { slidesPerView: 2 },
-              480: { slidesPerView: 3 },
-              640: { slidesPerView: 4 },
-              768: { slidesPerView: 5 },
-              1024: { slidesPerView: 6 },
+              0: {
+                slidesPerView: 2,
+              },
+              480: {
+                slidesPerView: 3,
+              },
+              640: {
+                slidesPerView: 4,
+              },
+              768: {
+                slidesPerView: 5,
+              },
+              1024: {
+                slidesPerView: 6,
+              },
             }}
           >
             {partnerships.map((p, i) => (
               <SwiperSlide key={i}>
-                <div className="text-sm sm:text-base font-heading font-semibold text-muted-foreground whitespace-nowrap hover:text-black transition">
-                  <img src={p.img} alt="" />
+                <div className="h-24 sm:h-32 flex items-center justify-center border border-border rounded-lg px-4 py-3 bg-white">
+                  <img
+                    src={p.img}
+                    alt={p.name || `Partner ${i + 1}`}
+                    className="max-h-12 sm:max-h-14 md:max-h-28 max-w-full w-auto object-contain mx-auto"
+                  />
                 </div>
               </SwiperSlide>
             ))}
@@ -426,7 +467,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── Collaborations and Clients ── */}
+      {/* Collaborations and Clients */}
       <section className="py-6 sm:py-12 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center mb-8 sm:mb-10">
@@ -438,10 +479,13 @@ const Index = () => {
           <Swiper
             modules={[Autoplay]}
             spaceBetween={12}
-            autoplay={{ delay: 0, disableOnInteraction: false }}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
             speed={3000}
-            loop
-            grabCursor
+            loop={true}
+            grabCursor={true}
             breakpoints={{
               0: { slidesPerView: 2 },
               480: { slidesPerView: 3 },
@@ -452,8 +496,12 @@ const Index = () => {
           >
             {clients.map((c, i) => (
               <SwiperSlide key={i}>
-                <div className="text-xs sm:text-sm font-medium text-muted-foreground border border-border rounded-lg px-4 py-2 sm:py-3 font-poppins whitespace-nowrap hover:bg-gray-100 transition">
-                  <img src={c.img} alt="" />
+                <div className="h-24 sm:h-28 flex items-center justify-center border border-border rounded-lg px-4 py-3 bg-white hover:bg-gray-50 transition">
+                  <img
+                    src={c.img}
+                    alt={c.name || `Client ${i + 1}`}
+                    className="max-h-12 sm:max-h-14 max-w-full w-auto object-contain mx-auto"
+                  />
                 </div>
               </SwiperSlide>
             ))}

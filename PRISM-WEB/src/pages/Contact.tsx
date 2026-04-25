@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useInquiryStore from "@/stores/useInquiryStore";
 import { toast } from "sonner";
-
+import map from "@/assets/map.webp";
 const Contact = () => {
   const { createInquiry } = useInquiryStore();
   const [form, setForm] = useState({
@@ -55,7 +55,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     <section className="p-8 md:p-12 bg-white">
       <div className="max-w-6xl mx-auto  overflow-hidden grid grid-cols-1 lg:grid-cols-2 shadow-md">
         {/* Form */}
-        <div className="bg-[#5B7DB1] p-8 md:p-12 flex flex-col justify-center">
+        <div className="bg-[#5B7DB1] p-6 md:p-10 flex flex-col justify-center">
           <h1 className="text-3xl md:text-4xl font-heading text-white  mb-8">
             Contact Us
           </h1>
@@ -128,13 +128,8 @@ const handleSubmit = async (e: React.FormEvent) => {
         </div>
 
         {/* Map */}
-        <div className="min-h-[350px] lg:min-h-0">
-          <iframe
-            title="PRISM Institute Location"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-79.7%2C43.5%2C-79.5%2C43.7&layer=mapnik&marker=43.5890%2C-79.6441"
-            className="w-full h-full min-h-[350px] border-0"
-            loading="lazy"
-          />
+        <div className="min-h-[360px] lg:min-h-0">
+        <img src={map} alt="PRISM Institute Location" />
         </div>
       </div>
     </section>

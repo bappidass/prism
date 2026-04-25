@@ -8,28 +8,34 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Solutions from "./pages/Solutions";
 import News from "./pages/News";
-import NewsDetail from "./pages/NewsDetail"
+import NewsDetail from "./pages/NewsDetail";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Maintenance from "./pages/Maintenance";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
-
+const MAINTENANCE_MODE = false;
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+         <ScrollToTop />
         <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/solutions" element={<Solutions />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/news/:id" element={<NewsDetail />} />
-            <Route path="/contact" element={<Contact />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
+          {MAINTENANCE_MODE ? (
+            <Route path="*" element={<Maintenance />} />
+          ) : (
+            <Route element={<Layout />}>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/solutions" element={<Solutions />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/news/:id" element={<NewsDetail />} />
+              <Route path="/contact" element={<Contact />} />
+            </Route>
+          )}
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

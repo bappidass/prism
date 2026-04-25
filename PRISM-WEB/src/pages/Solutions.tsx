@@ -1,5 +1,5 @@
 import PageHero from "@/components/PageHero";
-import heroImg1 from "@/assets/solution-banner.jpg";
+import heroImg1 from "@/assets/solution-banner.webp";
 import table from "@/assets/table.png";
 import OrbitalDiagramAnimation from "@/components/OrbitalDiagram";
 const Solutions = () => (

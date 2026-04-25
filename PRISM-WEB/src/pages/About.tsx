@@ -1,6 +1,6 @@
 import { Award, Network, ShieldCheck } from "lucide-react";
-import heroImg from "@/assets/aboutBanner.jpg";
-import approachImg from "@/assets/approach.jpg";
+import heroImg from "@/assets/aboutBanner.webp";
+import approachImg from "@/assets/renewedMission.webp";
 import wd1 from "@/assets/what-we-do-1.jpg";
 import wd2 from "@/assets/what-we-do-2.jpg";
 import wd3 from "@/assets/what-we-do-3.jpg";
@@ -91,8 +91,6 @@ const MemberCard = ({ member }) => (
     <p className="font-poppins font-semibold text-base sm:text-lg md:text-xl leading-snug text-center mt-4">
       {member.name || "Unnamed"}
     </p>
-
-   
   </div>
 );
 
@@ -507,20 +505,34 @@ const About = () => {
               disableOnInteraction: false,
             }}
             speed={2500}
-            loop
-            grabCursor
+            loop={true}
+            grabCursor={true}
             breakpoints={{
-              0: { slidesPerView: 2 },
-              480: { slidesPerView: 3 },
-              640: { slidesPerView: 4 },
-              768: { slidesPerView: 5 },
-              1024: { slidesPerView: 6 },
+              0: {
+                slidesPerView: 2,
+              },
+              480: {
+                slidesPerView: 3,
+              },
+              640: {
+                slidesPerView: 4,
+              },
+              768: {
+                slidesPerView: 5,
+              },
+              1024: {
+                slidesPerView: 6,
+              },
             }}
           >
             {partnerships.map((p, i) => (
               <SwiperSlide key={i}>
-                <div className="text-sm sm:text-base font-heading font-semibold text-muted-foreground whitespace-nowrap hover:text-black transition">
-                  <img src={p.img} alt="" />
+                <div className="h-24 sm:h-32 flex items-center justify-center border border-border rounded-lg px-4 py-3 bg-white">
+                  <img
+                    src={p.img}
+                    alt={p.name || `Partner ${i + 1}`}
+                    className="max-h-12 sm:max-h-14 md:max-h-28 max-w-full w-auto object-contain mx-auto"
+                  />
                 </div>
               </SwiperSlide>
             ))}
@@ -545,8 +557,8 @@ const About = () => {
               disableOnInteraction: false,
             }}
             speed={3000}
-            loop
-            grabCursor
+            loop={true}
+            grabCursor={true}
             breakpoints={{
               0: { slidesPerView: 2 },
               480: { slidesPerView: 3 },
@@ -557,8 +569,12 @@ const About = () => {
           >
             {clients.map((c, i) => (
               <SwiperSlide key={i}>
-                <div className="text-xs sm:text-sm font-medium text-muted-foreground border border-border rounded-lg px-4 py-2 sm:py-3 font-poppins whitespace-nowrap hover:bg-gray-100 transition">
-                  <img src={c.img} alt="" />
+                <div className="h-24 sm:h-28 flex items-center justify-center border border-border rounded-lg px-4 py-3 bg-white hover:bg-gray-50 transition">
+                  <img
+                    src={c.img}
+                    alt={c.name || `Client ${i + 1}`}
+                    className="max-h-12 sm:max-h-14 max-w-full w-auto object-contain mx-auto"
+                  />
                 </div>
               </SwiperSlide>
             ))}
